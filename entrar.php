@@ -1,5 +1,10 @@
 <?php
+  ob_start();  
+?>
 
+<?php
+
+	session_start();
 	include "conexao.php";
 	
 	$email = $_POST['email'];
@@ -10,11 +15,18 @@
 	$sql = mysql_query($query);
 	
 	if(mysql_num_rows($sql) == 0){
-		echo "usuario ou senha invalido(s)";
+		$_SESSION['erro'] = 'usuario ou senha invalido(s).';
+		header("Location: index.php");
 	} else {
-		session_start();
 		$_SESSION['email'] = $email;
 		$_SESSION['senha'] = $senha;
 		header("Location: principal.php");
 	}
+?>
+
+<?php
+  $pagemaincontent = ob_get_contents();
+  ob_end_clean();
+  $pagetitle = "Inicio";
+  include("master.php");
 ?>

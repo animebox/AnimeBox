@@ -1,19 +1,29 @@
 <?php
-	
+  ob_start();  
+?>
+
+<?php
+	session_start();
 	include "conexao.php";
 	
 	$email = $_POST['email'];
-	$senha = $_POST['senha'];
+	$senha1 = $_POST['senha1'];
+	$senha2 = $_POST['senha2'];
 	
-	$query = "INSERT INTO usuario (usuarioemail,usuariosenha) values ('".$email."','".$senha."')";
-	
-	$query = mysql_query($query) or die ("Houve um erro ao gravar os dados.");
-	
-	session_start();
-	
-	$_SESSION['usuario'] = $email;
-	$_SESSION['senha'] = $senha;
-	
-	header("Location principal.php");
+	if((!isset($email) or $email == '') or (!isset($senha1) or $senha1 == '') or (!isset($senha2) or $senha2 == '')){
+		$_SESSION['erro'] = 'Opss.. todos os campos são obrigatorios.';
+		header("Location: novaconta.php");
+	} else {
+		if($senha1 != $senha2){
+			$_SESSION['erro'] = 'Opss.. senhas diferentes.';
+			header("Location: novaconta.php");
+		} else {
+			$query = "INSERT INTO usuario (usuarioemail,usuariosenha) values ('".$email."','".$senha1."')";			
+			$query = mysql_query($query);
+			$_SESSION['email'] = $email;
+			$_SESSION['senha'] = $senha1;
+			header("Location: principal.php");
+		}
+	}
 	
 ?>

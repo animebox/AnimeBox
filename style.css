@@ -5,18 +5,11 @@ Body {
 	
 .Geral{
 	padding-top: 50px;
-	padding-left: 50px;
-	padding-right: 50px;
 	padding-bottom: 50px;
+	width: 1000px;
+	margin: auto;
 }
 
-.Logo{
-	background-image: url(animebox.png)	;
-	background-position: left;
-	background-repeat: no-repeat;
-	height: 120px;
-	margin-bottom: 20px;
-}
 
 .MenuSuperior{
 	background-color: #333;
@@ -30,32 +23,41 @@ Body {
 	text-align: center;
 }
 
-.Central{
+
+.logo{
+	background-image: url(animebox.png)	;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 120px;
+	margin-top:20px;
+}
+
+.central{
 	background-color:#FFF;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width: 100%;
+	padding-top:20px;
+	width: 1000;
+	margin: auto;
 }
 
 
 .formEntrar{
-	margin-top:7px;
-	margin-right: 100px;
-	text-align:right;
+	text-align:left;	
+	width: 300px;
+	margin: auto;
 }
 
 .formEntrarCampos{
-	margin-left: 2px;
-	width: 250px;	
+	width: 300px;
+	font-size:18px;	
 }
 
-.formEntrarBotao{
+.Botao{
 	font-size:18px;
 	border: none;
-	width:250px;
+	width:300px;
 	background-color: #333;
 	color: #fff;
-	padding: 20px;
+	padding: 15px;
 }
 
 
