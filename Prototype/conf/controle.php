@@ -9,7 +9,7 @@
 		public function __construct(){
 			
 			$banco = new banco;
-			//$banco->Conecta();
+			$banco->Conecta();
 			
 			$SaidaHtml = $banco->CarregaHtml('modelo');
 			$Conteudo = $banco->CarregaHtml('login');

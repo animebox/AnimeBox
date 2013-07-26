@@ -5,9 +5,9 @@
 	define('UrlPadrao' , "http://localhost/animebox");
 	
 	#Definições do Banco de Dados
-	define('DB_Host' , "localhost");
-	define('DB_Database' , "");
-	define('DB_User' , "");
-	define('DB_Pass' , "");
+	define('DB_Host' , "db4free.net");
+	define('DB_Database' , "animebox");
+	define('DB_User' , "animebox");
+	define('DB_Pass' , "@nimebox");
 	
 ?>
