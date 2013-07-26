@@ -1,0 +1,63 @@
+Body {
+	margin: 0px;
+	font-family: Helvetica Neue,helvetica,Arial,sans-serif;
+}
+	
+.Geral{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	width: 1000px;
+	margin: auto;
+}
+
+
+.MenuSuperior{
+	background-color: #333;
+	right: 0;
+	left: 0;
+	top: 0;
+	height: 40px;
+	position: fixed;
+	color: #fff;
+	font-size:12px;
+	text-align: center;
+}
+
+
+.logo{
+	background-image: url(../images/animebox.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 120px;
+	margin-top:20px;
+}
+
+.central{
+	background-color:#FFF;
+	padding-top:20px;
+	width: 1000;
+	margin: auto;
+}
+
+
+.formEntrar{
+	text-align:left;	
+	width: 300px;
+	margin: auto;
+}
+
+.formEntrarCampos{
+	width: 300px;
+	font-size:18px;	
+}
+
+.Botao{
+	font-size:18px;
+	border: none;
+	width:300px;
+	background-color: #333;
+	color: #fff;
+	padding: 15px;
+}
+
+
