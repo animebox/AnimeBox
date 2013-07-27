@@ -12,7 +12,11 @@
 			$banco->CarregaPaginas();
 			
 			if($banco->Pagina){
-				$Conteudo = $banco->ChamaPhp($banco->Pagina);
+				if($banco->Pagina == "novaconta"){
+					$Conteudo = $banco->ChamaPhp("novaconta");
+				}else{
+					$Conteudo = $banco->ChamaPhp($banco->Pagina);
+				}
 			}else{
 				$Conteudo = $banco->ChamaPhp('login');
 			}
@@ -23,7 +27,7 @@
 			$SaidaHtml = str_replace('<%URLPADRAO%>',UrlPadrao,$SaidaHtml);
 
 			#Imprime tela
-			echo utf8_encode($SaidaHtml);
+			echo $SaidaHtml;
 			
 		}
 	}

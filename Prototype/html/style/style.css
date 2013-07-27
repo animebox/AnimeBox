@@ -6,7 +6,7 @@ Body {
 .Geral{
 	padding-top: 50px;
 	padding-bottom: 50px;
-	width: 1000px;
+	width: 100%;
 	margin: auto;
 }
 
@@ -35,7 +35,7 @@ Body {
 .central{
 	background-color:#FFF;
 	padding-top:20px;
-	width: 1000;
+	width: 100%;
 	margin: auto;
 }
 
