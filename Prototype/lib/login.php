@@ -1,6 +1,4 @@
 <?php
-	$msg = " ";
-
 	#Include nas funcoes do cliente
 	include('functions/banco-login.php');
 	
@@ -17,10 +15,7 @@
 		$num_rows = $banco->Linha($result);
 		$rs = mysql_fetch_array($result , MYSQL_ASSOC);
 		if(!$num_rows) {
-			$msg = '<div class="alert alert-error">
-             			<button type="button" class="close" data-dismiss="alert">×</button>
-              			<strong>Erro!</strong> Login ou senha inválidos.
-            		</div>';
+			$msg = MsgErro_Usuario;
 		}else if($senha === $rs['USUARIOSENHA']){
 			$banco->RedirecionaPara('principal');
 		}else{
@@ -30,6 +25,5 @@
 	
 	#Imprime Valores
 	$Conteudo = $banco->CarregaHtml('login');
-	$Conteudo = str_replace('<%MSG%>',$msg,$Conteudo);
 
 ?>
