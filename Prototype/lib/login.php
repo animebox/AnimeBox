@@ -16,7 +16,7 @@
 		$rs = mysql_fetch_array($result , MYSQL_ASSOC);
 		if(!$num_rows) {
 			$msg = MsgErro_Usuario;
-		}else if($senha === $rs['senha']){
+		}else if($senha === $rs['USUARIOSENHA']){
 			$banco->RedirecionaPara('principal');
 		}else{
 			$msg = MsgErro_Senha;

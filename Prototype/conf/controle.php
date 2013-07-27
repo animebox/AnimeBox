@@ -11,10 +11,10 @@
 			$banco->Conecta();
 			$banco->CarregaPaginas();
 			
-			if(empty($banco->Pagina)){
-				$Conteudo = $banco->ChamaPhp('login');
-			}else{
+			if($banco->Pagina){
 				$Conteudo = $banco->ChamaPhp($banco->Pagina);
+			}else{
+				$Conteudo = $banco->ChamaPhp('login');
 			}
 			
 						
