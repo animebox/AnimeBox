@@ -3,7 +3,7 @@
 ?>
 
 <div >
-<form action="cadastrar.php" method="post" class="formEntrar" />
+<form action="cadastrar.php" method="post" class="formEntrar">
 	<?php    
 		session_start();
         if(isset($_SESSION['erro'])){

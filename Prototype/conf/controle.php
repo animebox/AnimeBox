@@ -1,7 +1,6 @@
 <?php
-	#Aqui monta as páginas e imprime na tela
+	#Aqui monta as paginas e imprime na tela
 	
-	session_start('login');
 	include('functions/banco.php');
 	include('tags.php');
 	
@@ -10,9 +9,16 @@
 			
 			$banco = new banco;
 			$banco->Conecta();
+			$banco->CarregaPaginas();
 			
+			if(empty($banco->Pagina)){
+				$Conteudo = $banco->ChamaPhp('login');
+			}else{
+				$Conteudo = $banco->ChamaPhp($banco->Pagina);
+			}
+			
+						
 			$SaidaHtml = $banco->CarregaHtml('modelo');
-			$Conteudo = $banco->CarregaHtml('login');
 			$SaidaHtml = str_replace('<%CONTEUDO%>',$Conteudo,$SaidaHtml);
 			$SaidaHtml = str_replace('<%URLPADRAO%>',UrlPadrao,$SaidaHtml);
 

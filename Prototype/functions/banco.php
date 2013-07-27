@@ -11,7 +11,7 @@
 			}
 			$db_selected = mysql_select_db(DB_Database, $link);
 			if (!$db_selected) {
-				die ('Can\'t use biblio : ' . mysql_error());
+				die ('Can\'t use biblio: ' . mysql_error());
 			}
 			
 		}
@@ -50,22 +50,22 @@
 		
 		#Funcao que carrega as peginas
 		function CarregaPaginas(){
-			
-			#urlDesenvolve = ignora 'livraria' e oq tiver antes.
-			$urlDesnvolve = 'animebox';
+				
+			#urlDesenvolve = ignora 'animebox' e oq tiver antes.
+			$urlDesenvolve = 'animebox';
+			$urlDesenvolve2 = 'prototype';
 			$primeiraBol = true;
-			$uri = $_SERVER["REQUEST_URI"];
+			$uri = strtolower($_SERVER["REQUEST_URI"]);
 			$exUrls = explode('/',$uri);
 			$SizeUrls = count($exUrls)-1;
-
+		
 			$p = 0;
 			foreach( $exUrls as $chave => $valor ){
-				if( $valor != '' && $valor != $urlDesnvolve){
+				if($valor != '' && $valor != $urlDesenvolve && $valor != $urlDesenvolve2){
 					$valorUri = $valor;
 					$valorUri = strip_tags($valorUri);
 					$valorUri = trim($valorUri);
 					$valorUri = addslashes($valorUri);
-					
 					if( $primeiraBol ){
 						$this->Pagina = $valorUri;
 						$primeiraBol = false;
