@@ -27,5 +27,11 @@
 			$sql = "INSERT INTO USUARIO (USUARIOEMAIL, USUARIOSENHA) VALUES ('".$email."', '".$senha."')";
 			parent::Execute($sql);
 		}
+		
+		#Função que altera os dados do usuário
+		function AlterarDados($email,$senha){
+			$sql = "UPDATE USUARIO SET USUARIOSENHA = '".$senha."' WHERE USUARIOEMAIL ='".$_SESSION['email']."'";
+			parent::Execute($sql);
+		}
 	}
 ?>

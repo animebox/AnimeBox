@@ -18,7 +18,7 @@
 			$existe = $banco->UsuarioJaExiste($email);
 			
 			if($existe){
-				$msg = "Email já cadastrado";
+				$msg = "Email ja cadastrado";
 			}else{
 				if($senha1 === $senha2){
 					$banco->Cadastro($email, $senha1);

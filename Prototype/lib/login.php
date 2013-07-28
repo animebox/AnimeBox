@@ -19,7 +19,14 @@
 		if(!$num_rows) {
 			$msg = "Usuário não cadastrado!";
 		}else if($senha === $rs['USUARIOSENHA']){
-			$banco->RedirecionaPara('principal');
+			session_start();
+			$_SESSION['email'] = $email;
+			$_SESSION['senha'] = $senha;
+			if($rs['USUARIOADM'] == '1'){
+				$banco->RedirecionaPara('administrativo');
+			} else {	
+				$banco->RedirecionaPara('principal');
+			}
 		}else{
 			$msg = "Senha Incorreta!";
 		}

@@ -18,7 +18,7 @@
 			$_SESSION['erro'] = 'Opss.. senhas diferentes.';
 			header("Location: novaconta.php");
 		} else {
-			$query = "INSERT INTO usuario (usuarioemail,usuariosenha) values ('".$email."','".$senha1."')";			
+			$query = "INSERT INTO USUARIO (USUARIOEMAIL,USUARIOSENHA) values ('".$email."','".$senha1."')";			
 			$query = mysql_query($query);
 			$_SESSION['email'] = $email;
 			$_SESSION['senha'] = $senha1;
