@@ -53,7 +53,6 @@
 				
 			#urlDesenvolve = ignora 'animebox' e oq tiver antes.
 			$urlDesenvolve = 'animebox';
-			$urlDesenvolve2 = 'prototype';
 			$primeiraBol = true;
 			$uri = strtolower($_SERVER["REQUEST_URI"]);
 			$exUrls = explode('/',$uri);
@@ -61,7 +60,7 @@
 		
 			$p = 0;
 			foreach( $exUrls as $chave => $valor ){
-				if($valor != '' && $valor != $urlDesenvolve && $valor != $urlDesenvolve2){
+				if($valor != '' && $valor != $urlDesenvolve){
 					$valorUri = $valor;
 					$valorUri = strip_tags($valorUri);
 					$valorUri = trim($valorUri);
